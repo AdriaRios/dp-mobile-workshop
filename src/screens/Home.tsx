@@ -1,26 +1,17 @@
-import React from 'react';
-
 import { StatusBar } from 'expo-status-bar';
-import { Text } from 'react-native';
 import styled from 'styled-components/native';
-import { useQuery } from '@apollo/client';
-import { GET_MOVIES } from '~/apollo/queries/getMovies';
+import React from 'react';
+import { Text } from 'react-native';
 
-export const Home = () => {
-  const { data } = useQuery(GET_MOVIES, {
-    variables: { input: 'star wars' },
-  });
+import { Search } from '~/components/SearchInput';
 
-  console.log(data);
-
-  return (
-    <StyledContainer>
-      <Text>The Movie Searcher</Text>
-      {/* <Text>{newJoke}</Text> */}
-      <StatusBar style="auto" />
-    </StyledContainer>
-  );
-};
+export const Home = () => (
+  <StyledContainer>
+    <Text>The Movie Searcher</Text>
+    <Search />
+    <StatusBar style="auto" />
+  </StyledContainer>
+);
 
 const StyledContainer = styled.View`
   flex: 1;
