@@ -7,6 +7,7 @@ export const GET_MOVIES = gql`
       results {
         id
         original_title
+        poster_path
       }
     }
   }
